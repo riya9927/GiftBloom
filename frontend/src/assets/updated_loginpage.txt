@@ -1,0 +1,89 @@
+import React, { useState } from 'react';
+import { assets } from '../assets/assets';
+
+const login = () => {
+  const [currentState, setCurrentState] = useState('Login');
+  const [showPassword, setShowPassword] = useState(false);
+
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+  };
+
+  return (
+    <div className="min-h-[80vh] flex items-center justify-center p-4">
+      <div className="w-full max-w-2xl p-8 rounded-3xl bg-pink-50 shadow-xl">
+        <div className="flex gap-8">
+          {/* Left side with image */}
+          <div className="flex-1 flex items-center justify-center">
+            <img 
+              src={assets.login_page}
+              alt="Cute bunny with balloons"
+              className="w-100 h-100 object-cover"
+            />
+          </div>
+
+          {/* Right side with form */}
+          <div className="flex-1">
+            <form onSubmit={onSubmitHandler} className="flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800">
+              <div className="inline-flex items-center gap-2 mb-2 mt-10">
+                <p className="prata-regular text-3xl">{currentState}</p>
+                <hr className="border-none h-[1.5px] w-8 bg-gray-800" />
+              </div>
+
+              {currentState === 'Sign Up' && (
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  className="w-full px-3 py-2 border border-gray-800"
+                />
+              )}
+              
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-3 py-2 border border-gray-800"
+              />
+              
+              <div className="relative w-full">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="password"
+                  className="w-full px-3 py-2 border border-gray-800"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-800 text-sm"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
+
+              <div className="w-full flex justify-between text-sm mt-[-8px]">
+                <p className="cursor-pointer">Forget your password?</p>
+                {currentState === 'Login' ? (
+                  <p onClick={() => setCurrentState('Sign Up')} className="cursor-pointer">
+                    Create Account
+                  </p>
+                ) : (
+                  <p onClick={() => setCurrentState('Login')} className="cursor-pointer">
+                    Login
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="bg-black text-white font-light px-8 py-2 mt-4"
+              >
+                {currentState === 'Login' ? 'Sign In' : 'Sign Up'}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default login;
