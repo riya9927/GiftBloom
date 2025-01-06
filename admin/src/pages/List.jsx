@@ -37,6 +37,10 @@ const List = ({ token }) => {
             return;
         }
 
+        if (!window.confirm('Are you sure you want to delete this song?')) {
+        return;
+      }
+
         try {
             const response = await axios.post(
                 `${backendUrl}/api/product/remove`,
