@@ -8,9 +8,7 @@ GiftBloom is a **MERN-stack** e-commerce platform designed for seamless and pers
 - 🔹 **User Authentication** (Signup/Login with JWT)  
 - 🔹 **Product Filtering & Searching** (By category, price, occasion, etc.)  
 - 🔹 **Shopping Cart & Checkout** (Add/remove items, order summary)  
-- 🔹 **Secure Payment Integration** (Stripe)  
 - 🔹 **Order Tracking & History**  
-- 🔹 **Wishlist Management**  
 - 🔹 **User Profile & Address Management**  
 
 ### **Admin Features**  
@@ -29,7 +27,7 @@ GiftBloom is a **MERN-stack** e-commerce platform designed for seamless and pers
 | **Tailwind CSS** | Styling |  
 | **Stripe API** | Payment Integration |  
 | **Multer** | Image Uploads |  
-| **Cloudinary** | Image Hosting |  
+| **ImgBB** | Image Hosting |  
 
 ## 🛠️ Installation & Setup  
 1️⃣ **Clone the Repository:**  
@@ -55,10 +53,7 @@ npm install
 ```env
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-STRIPE_SECRET_KEY=your_stripe_key
-CLOUDINARY_CLOUD_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_secret
+IMGBB_API_KEY=your_imgbb_api_key
 ```
 
 4️⃣ **Run the Project:**  
@@ -74,7 +69,5 @@ npm start
 ```
 - Open `http://localhost:3000/` in your browser.  
 
-
 ## 🤝 Contributing  
-Feel free to fork this repository and submit pull requests! Contributions are welcome to enhance features, fix bugs, and improve performance.  
-
+Feel free to fork this repository and submit pull requests! Contributions are welcome to enhance features, fix bugs, and improve performance.
