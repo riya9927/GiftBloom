@@ -70,6 +70,12 @@ const NavBar = () => {
                                             My Profile
                                         </button>
                                         <button
+                                            onClick={() => navigate('/wishlist')}
+                                            className="w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-50"
+                                        >
+                                            WishList
+                                        </button>
+                                        <button
                                             onClick={() => navigate('/orders')}
                                             className="w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-50"
                                         >

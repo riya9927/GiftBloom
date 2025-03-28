@@ -32,6 +32,7 @@ const List = ({ token }) => {
     }, []);
 
     const handleDelete = async (productId) => {
+        
         if (!token) {
             toast.error('Authentication required');
             return;
